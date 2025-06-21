@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-lg">
+  <div class="container">
+    <div class="brand-container">
+      <img src="assets/images/Chair2.png" alt="Chair" class="header-logo">
+      <a class="navbar-brand" routerLink="/">ענת - פסיכולוגית</a>
+    </div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">דף הבית</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/about" routerLinkActive="active">אודות</a>
+        </li>
+        <li class="nav-item dropdown">
+          <span class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="cursor: pointer;">
+            טיפול
+          </span>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLink="/emotional-therapy">טיפול רגשי</a></li>
+            <li><a class="dropdown-item" routerLink="/child-therapy">טיפול בילדים</a></li>
+            <li><a class="dropdown-item" routerLink="/parent-guidance">הדרכת הורים</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/faq" routerLinkActive="active">שאלות נפוצות</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/contact" routerLinkActive="active">צור קשר</a>
+        </li>
+      </ul>
+    </div>
+    <div class="phone-number">
+      <div class="contact-icons">
+        <a href="https://wa.me/972545920661" class="contact-icon whatsapp-icon" target="_blank">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </div>
+      <span class="number">0545920661</span>
+    </div>
+  </div>
+</nav> 

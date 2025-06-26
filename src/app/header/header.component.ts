@@ -9,4 +9,12 @@ import { RouterModule } from '@angular/router';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
+  scrollToFooter(event: Event) {
+    event.preventDefault();
+    window.location.hash = 'footer';
+    const footer = document.getElementById('footer');
+    if (footer) {
+      footer.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 } 

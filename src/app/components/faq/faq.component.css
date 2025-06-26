@@ -1,0 +1,25 @@
+.accordion-body{
+    font-size: 21px;
+
+}
+
+.section-divider {
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(to right, #e8d5c4, #ccae88);
+    margin: 0.5rem 2rem 0 0;
+    border-radius: 3px;
+  }
+  
+  .accordion-header {
+    cursor: pointer;
+  }
+  
+  .accordion-body {
+    padding: 1rem;
+  }
+  
+  h2.accordion-header {
+    padding: 1rem;
+    margin-bottom: 0;
+  }

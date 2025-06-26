@@ -26,13 +26,13 @@
 }
 
 .card-title {
-  color: #5c4d3c;
+  color: #2c3e50;
   font-weight: 600;
   margin-bottom: 1rem;
 }
 
 .card ul li {
-  color: #6b5b4a;
+  color: #374d63;
   position: relative;
   padding-right: 1.5rem;
 }
@@ -44,7 +44,7 @@
 }
 
 .btn-link {
-  color: #5c4d3c;
+  color: #374d63;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
@@ -98,7 +98,7 @@
 }
 
 .section-title {
-  color: #5c4d3c;
+  color: #2c3e50;
   font-size: 2.5rem;
   font-weight: 600;
   margin-bottom: 1.5rem;
@@ -113,10 +113,20 @@
 }
 
 .section-description {
-  color: #6b5b4a;
-  font-size: 1.2rem;
+  color: #374d63;
+  font-size: 1.5rem;
   line-height: 1.6;
   margin-bottom: 3rem;
+  direction: rtl;
+  text-align: right;
+}
+
+.section-light{  
+  border-top: 1px solid #e8d5c4;
+}
+
+.text-center{
+  color: #2c3e50;
 }
 
 .reasons-container {
@@ -134,20 +144,24 @@
   list-style: none;
   padding: 0;
   margin: 0;
+  direction: rtl;
+  text-align: right;
 }
 
 .reasons-list li {
-  color: #5c4d3c;
-  font-size: 1.1rem;
+  color: #374d63;
+  font-size: 1.5rem;
   margin-bottom: 1rem;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
   gap: 0.5rem;
+  direction: rtl;
+  text-align: right;
+  justify-content: flex-start;
 }
 
 .reasons-list i {
-  color: #ccae88;
+  color: #374d63;
   font-size: 1.2rem;
 }
 
@@ -182,10 +196,9 @@
 }
 
 .section-psychologist img {
-  width: 100%;
-  height: auto;
-  max-height: 400px;
+  height: 40rem;
   object-fit: contain;
+  border-radius: 40px;
 }
 
 .section-psychologist .row:last-child {
@@ -230,26 +243,6 @@
   }
 }
 
-.footer {
-  background-color: #f8f5f2;
-  padding: 0.5rem 0;
-  border-top: 1px solid #e8d5c4;
-  margin-top: 1rem;
-}
-
-.footer-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.footer .number{
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #2c3e50;
-}
-
 .contact-info .therapist-name {
   color: #5c4d3c;
   margin-bottom: 0.25rem;
@@ -288,7 +281,7 @@
 }
 
 .fa-whatsapp{
-  color: #25D366;
+  color: #1DAA61;
 }
 /*
 .contact-icon .whatsapp-icon {

@@ -1,19 +1,15 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-footer',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, FooterComponent, CommonModule, FormsModule, HttpClientModule],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  imports: [CommonModule, FormsModule],
+  templateUrl: './footer.component.html',
+  styleUrl: './footer.component.css'
 })
-export class AppComponent {
+export class FooterComponent {
   title = 'anatsite';
 
   model: any = {};

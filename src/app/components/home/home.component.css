@@ -94,7 +94,6 @@
   background-color: #f8f5f2;
   padding: 5rem 0;
   position: relative;
-  border-top: 1px solid #e8d5c4;
 }
 
 .section-title {
@@ -221,25 +220,83 @@
   position: relative;
 }
 
-@media (max-width: 991px) {
-  .psychologist-sections {
-    flex-direction: column;
+@media (max-width: 991.98px) {
+  .container {
+    padding: 0 0.5rem;
+    margin-top: 60px;
+    max-width: 100%;
   }
-
+  .section-psychologist {
+    margin-top: 60px;
+    padding: 2rem 0;
+  }
+  .section-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .section-description {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+  }
+  .section-divider {
+    width: 50px;
+    height: 2px;
+    margin-bottom: 1rem;
+  }
+  .section-psychologist .row {
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .section-psychologist img {
+    height: 180px;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    border-radius: 20px;
+  }
   .psychologist-section {
+    padding: 0.5rem;
+    text-align: right;
+  }
+  .services-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .card {
+    min-width: unset;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  }
+  .card-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+  .card-body {
     padding: 1rem;
   }
-
-  .psychologist-section:first-child::after {
-    display: none;
+  .card ul li {
+    font-size: 1rem;
+    padding-right: 1rem;
   }
-
-  .section-psychologist .row {
-    margin-bottom: 2rem;
+  .btn-link {
+    font-size: 1rem;
   }
-  
-  .section-psychologist img {
-    margin-bottom: 2rem;
+  .reasons-container {
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  .reasons-list li {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    gap: 0.3rem;
+  }
+  .anat-photo {
+    height: 120px;
+    max-width: 100%;
+    border-radius: 20px;
   }
 }
 
@@ -298,7 +355,7 @@
 */
 
 .anat-photo {
-  width: 260px;
+  max-width: 40rem;
   height: 260px;
   object-fit: cover;
   /*

@@ -31,11 +31,11 @@
 }
 
 .about-photo {
-  height: 32rem;
+  height: 38rem;
   object-fit: contain;
   border-radius: 40px;
   box-shadow: 0 4px 16px rgba(44,62,80,0.07);
-  max-width: 100%;
+  max-width: 90%;
 }
 
 .about-section {
@@ -61,6 +61,7 @@
   .about-photo {
     height: 18rem;
     margin-bottom: 2rem;
+    max-width: 100%;
   }
   .about-section {
     padding: 1.5rem 0.5rem;

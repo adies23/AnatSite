@@ -1,4 +1,3 @@
-
 .navbar {
   padding: 0.5rem 0;
   min-height: 60px;
@@ -56,6 +55,7 @@
 
 .navbar-nav {
   display: flex;
+  flex-direction: row;
   align-items: center;
   gap: 2.5rem;
   margin: 0;
@@ -63,6 +63,10 @@
   list-style: none;
   height: 100%;
   position: relative;
+  background: none;
+  box-shadow: none;
+  width: auto;
+  position: static;
 }
 
 .nav-item {
@@ -126,6 +130,7 @@
 
 .dropdown-item:hover {
   background-color: var(--light-bg);
+  transform: scale(1.1);
 }
 
 /* Add padding to body to prevent content from hiding under fixed header */
@@ -180,8 +185,73 @@ body {
   transform: scale(1.1);
 }
 
+/* אייקון המבורגר */
+.mobile-nav-icon {
+  display: block;
+  position: fixed;
+  top: 1.2rem;
+  right: 1.5rem;
+  left: auto;
+  z-index: 3000;
+  color: #2c3e50;
+  font-size: 2.2rem;
+  cursor: pointer;
+  background: none;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
+}
+
 /* Responsive adjustments */
 @media (max-width: 991.98px) {
+  .navbar {
+    display: none;
+  }
+  .navbar-nav {
+    display: none !important;
+  }
+  .mobile-nav-icon {
+    display: block;
+    position: fixed;
+    top: 0.4rem;
+    right: 1.5rem;
+    left: auto;
+    z-index: 3000;
+    padding: 0.01em 0.5em;
+    box-shadow: 0 2px 8px rgba(44,62,80,0.08);
+  }
+
+  .mobile-navbar {
+    padding: 0.5rem 0;
+    width: 100%;
+    min-height: 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: linear-gradient(to bottom, #e8d5c4, #f5efe9);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .side-nav {
+    top: 0;
+    right: 0;
+    left: auto;
+    width: 270px;
+    height: 100vh;
+    background: #fff;
+    z-index: 2001;
+    padding: 2.5rem 1.5rem 1.5rem 1.5rem;
+    box-shadow: -2px 0 12px rgba(44,62,80,0.13);
+    animation: slideInRight 0.3s;
+    position: fixed;
+    display: block;
+  }
+  .desktop-nav {
+    display: none !important;
+  }
+
   .navbar .container {
     flex-wrap: wrap;
     height: auto;
@@ -197,11 +267,6 @@ body {
     width: 100%;
   }
   
-  .navbar-nav {
-    gap: 0;
-    width: 100%;
-  }
-  
   .nav-link {
     padding: 0.8rem 1rem;
   }
@@ -214,4 +279,113 @@ body {
     padding: 0;
     background: transparent;
   }
+  .dropdown-item {
+    padding-right: 1.5rem;
+  }
+
+  .side-nav-header {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 2.2rem;
+    cursor: pointer;
+  }
+  .side-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .side-nav li {
+    margin-bottom: 0.7rem;
+  }
+  .side-nav a {
+    color: #2c3e50;
+    font-size: 1rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+    padding: 0.3rem 0;
+  }
+  .side-nav a:hover {
+    color: #ccae88;
+  }
+  .dropdown-title {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+  .mobile-navbar .container{
+    margin-top: 10px;
+  }
+}
+
+/* דסקטופ – מסתיר אייקון המבורגר */
+@media (min-width: 992px) {
+  .mobile-nav-icon {
+    display: none;
+  }
+  .side-nav-overlay {
+    display: none;
+  }
+  .side-nav {
+    display: none !important;
+  }
+}
+
+/* שכבת overlay (רק במובייל כשהתפריט פתוח) */
+.side-nav-overlay {
+  position: fixed;
+  top: 0; right: 0; left: 0; bottom: 0;
+  background: rgba(44,62,80,0.18);
+  z-index: 2000;
+  display: block;
+}
+
+/* Side Drawer */
+.side-nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 270px;
+  height: 100vh;
+  background: #fff;
+  box-shadow: -2px 0 12px rgba(44,62,80,0.13);
+  z-index: 2001;
+  padding: 0.5rem 1.5rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  animation: slideInRight 0.3s;
+}
+
+@keyframes slideInRight {
+  from { right: -300px; opacity: 0; }
+  to { right: 0; opacity: 1; }
+}
+
+.side-nav-header {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 2.2rem;
+  cursor: pointer;
+}
+
+.side-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.side-nav li {
+  margin-bottom: 1.5rem;
+}
+
+.side-nav a {
+  color: #2c3e50;
+  font-size: 1.2rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.side-nav a:hover {
+  color: #ccae88;
 }

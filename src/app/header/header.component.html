@@ -9,28 +9,24 @@
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
       <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">דף הבית</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/about" routerLinkActive="active">אודות</a>
-        </li>
-        <li class="nav-item dropdown">
-          <span class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="cursor: pointer;">
-            טיפול
-          </span>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" routerLink="/emotional-therapy">טיפול רגשי</a></li>
-            <li><a class="dropdown-item" routerLink="/child-therapy">טיפול בילדים</a></li>
-            <li><a class="dropdown-item" routerLink="/parent-guidance">הדרכת הורים</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/faq" routerLinkActive="active">שאלות נפוצות</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#footer" (click)="scrollToFooter($event)">צור קשר</a>
-        </li>
+        <ng-container *ngFor="let link of navLinks">
+          <li class="nav-item" *ngIf="!link.dropdown && !link.anchor">
+            <a class="nav-link" [routerLink]="link.path" routerLinkActive="active" [routerLinkActiveOptions]="{exact: link.exact || false}">{{ link.label }}</a>
+          </li>
+          <li class="nav-item dropdown" *ngIf="link.dropdown">
+            <span class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="cursor: pointer;">
+              {{ link.label }}
+            </span>
+            <ul class="dropdown-menu">
+              <li *ngFor="let child of link.children">
+                <a class="dropdown-item" [routerLink]="child.path">{{ child.label }}</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item" *ngIf="link.anchor">
+            <a class="nav-link" href="#{{link.anchor}}" (click)="scrollToFooter($event)">{{ link.label }}</a>
+          </li>
+        </ng-container>
       </ul>
     </div>
     <div class="phone-number">
@@ -42,4 +38,39 @@
       <span class="number">0545920661</span>
     </div>
   </div>
-</nav> 
+</nav>
+
+<!-- אייקון המבורגר - מוצג רק במובייל -->
+<nav class="mobile-navbar navbar-expand-lg">
+  <div class="container">
+    <div class="mobile-nav-icon" (click)="openSideNav()">
+      <i class="fas fa-bars"></i>
+    </div>
+  </div>
+</nav>
+
+<!-- תפריט צד (Side Drawer) -->
+<div class="side-nav-overlay" *ngIf="isSideNavOpen" (click)="closeSideNav()"></div>
+<nav class="side-nav" *ngIf="isSideNavOpen">
+  <div class="side-nav-header">
+    <span (click)="closeSideNav()">&times;</span>
+  </div>
+  <ul>
+    <ng-container *ngFor="let link of navLinks">
+      <li *ngIf="!link.dropdown && !link.anchor">
+        <a [routerLink]="link.path" (click)="closeSideNav()">{{ link.label }}</a>
+      </li>
+      <li *ngIf="link.dropdown">
+        <span class="dropdown-title">{{ link.label }}</span>
+        <ul>
+          <li *ngFor="let child of link.children">
+            <a [routerLink]="child.path" (click)="closeSideNav()">{{ child.label }}</a>
+          </li>
+        </ul>
+      </li>
+      <li *ngIf="link.anchor">
+        <a href="#{{link.anchor}}" (click)="scrollToFooter($event)">{{ link.label }}</a>
+      </li>
+    </ng-container>
+  </ul>
+</nav>

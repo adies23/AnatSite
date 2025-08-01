@@ -316,6 +316,25 @@ body {
   .mobile-navbar .container{
     margin-top: 10px;
   }
+
+  .mobile-navbar-row {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+  }
+  .mobile-info-row {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-right: 90px;
+  }
+
+  .section-description {
+    font-size: 0.95rem;
+    max-width: 85vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 /* דסקטופ – מסתיר אייקון המבורגר */
@@ -328,6 +347,9 @@ body {
   }
   .side-nav {
     display: none !important;
+  }
+  .mobile-navbar{
+    display: none;
   }
 }
 
@@ -344,7 +366,7 @@ body {
 .side-nav {
   position: fixed;
   top: 0;
-  right: 0;
+  right: 25px;
   width: 270px;
   height: 100vh;
   background: #fff;

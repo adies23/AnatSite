@@ -42,9 +42,16 @@
 
 <!-- אייקון המבורגר - מוצג רק במובייל -->
 <nav class="mobile-navbar navbar-expand-lg">
-  <div class="container">
+  <div class="container mobile-navbar-row">
     <div class="mobile-nav-icon" (click)="openSideNav()">
       <i class="fas fa-bars"></i>
+    </div>
+    <div class="mobile-info-row">
+      <span class="mobile-title">ענת - פסיכולוגית</span>
+      <span class="mobile-number">0545920661</span>
+      <a href="https://wa.me/972545920661" class="contact-icon whatsapp-icon" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+      </a>
     </div>
   </div>
 </nav>
@@ -60,14 +67,11 @@
       <li *ngIf="!link.dropdown && !link.anchor">
         <a [routerLink]="link.path" (click)="closeSideNav()">{{ link.label }}</a>
       </li>
-      <li *ngIf="link.dropdown">
-        <span class="dropdown-title">{{ link.label }}</span>
-        <ul>
-          <li *ngFor="let child of link.children">
-            <a [routerLink]="child.path" (click)="closeSideNav()">{{ child.label }}</a>
-          </li>
-        </ul>
-      </li>
+      <ng-container *ngIf="link.dropdown">
+        <li *ngFor="let child of link.children">
+          <a [routerLink]="child.path" (click)="closeSideNav()">{{ child.label }}</a>
+        </li>
+      </ng-container>
       <li *ngIf="link.anchor">
         <a href="#{{link.anchor}}" (click)="scrollToFooter($event)">{{ link.label }}</a>
       </li>

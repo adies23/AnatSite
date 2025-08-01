@@ -1,0 +1,12 @@
+{
+  "routes": [
+    "/",
+    "/about",
+    "/blog",
+    "/child-therapy",
+    "/contact",
+    "/emotional-therapy",
+    "/faq",
+    "/parent-guidance"
+  ]
+}

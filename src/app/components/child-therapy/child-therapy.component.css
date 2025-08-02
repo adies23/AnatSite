@@ -69,15 +69,31 @@ h2.content-section {
 
 @media (max-width: 991.98px) {
   .container {
-    max-width: 100vw;
+    max-width: 86vw;
     padding: 2rem;
     background-color: #fef2e5;
-    display: flex;
   }
 
   .content-section {
-    width: 100%;
+    width: 95%;
     margin: 0 auto;
+    padding: 1.5rem 0.5rem;
+  }
+
+  .container h1{
+    font-size: 2rem;
+  }
+
+  .container h2{
+    font-size: 1.5rem;
+  }
+
+  .accordion-body p{
+    font-size: 0.9rem;
+  }
+
+  .accordion-body li{
+    font-size: 0.9rem;
   }
 }
   

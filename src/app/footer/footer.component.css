@@ -91,7 +91,7 @@
     border: 1px solid #e8d5c4;
     border-radius: 12px;
     padding: 0.8rem 1rem;
-    color: #5c4d3c;
+    color: black;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
     width: 100%;
   }
@@ -130,7 +130,8 @@
   }
   
   .btn-primary {
-    background: linear-gradient(to right, #ccae88, #e8d5c4);
+    /*background: linear-gradient(to right, #d39341, #e8d5c4);*/
+    background: linear-gradient(to right, #1a6919, #88dc86);
     border: none;
     padding: 0.8rem 2rem;
     font-size: 1.1rem;
@@ -186,6 +187,29 @@
     width: 1px;
     background-color: #e8d5c4;
   }
+  
+  .short-input {
+    width: 110%;
+    display: inline-block;
+  }
+  
+  input[name="phone"].short-input {
+    margin-right: 1%;
+    width: 110%;
+  }
+  
+  .custom-alert {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1055;   /* מעל הכל */
+    min-width: 300px;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  }
+
 
   @media (max-width: 991.98px) {
     .footer .row {
@@ -205,25 +229,18 @@
     }
     .contact-info {
       margin-top: 2rem;
-      border-bottom: 2px solid white;
+      border-bottom: 2px solid #e8d5c4;
       margin-bottom: 20px;
     }
     .contact-info .therapist-name {
       margin-top: 1rem;
     }
     input[name="name"].short-input {
-      width: 100%;
+      width: 110%;
       display: inline-block;
     }
+      
+    .contact-details-col::after {
+      background-color: transparent;
+    }
   }
-  
-  .short-input {
-    width: 80%;
-    display: inline-block;
-  }
-  
-  input[name="phone"].short-input {
-    margin-right: 1%;
-    width: 100%;
-  }
-  

@@ -7,7 +7,7 @@
             <h3 class="therapist-name">ענת בקלש אישטה</h3>
             <p class="therapist-subtitle">פסיכולוגית חינוכית</p>
             <div class="phone-number mt-3">
-              <a href="https://wa.me/972545920661" class="contact-icon" target="_blank">
+              <a href="https://wa.me/972545920661" class="contact-icon" aria-label="שלח הודעת וואטסאפ" target="_blank">
                 <i class="fab fa-whatsapp"></i>
               </a>
               <span class="number">054-5920661</span>
@@ -20,13 +20,20 @@
           <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
             <div class="container-contact">
               <div class="row">
-                <div class="form-group">
-                  <input type="text" id="name" name="name" class="form-control short-input" placeholder="שם מלא" required [(ngModel)]="model.name" #name="ngModel">
-                  <label for="name">שם מלא</label>
+                <div class="col-12 col-md-6">
+                  <div class="form-group">
+                    <input type="text" id="name" name="name" class="form-control short-input"
+                          placeholder="שם מלא" required [(ngModel)]="model.name" #name="ngModel">
+                    <label for="name">שם מלא</label>
+                  </div>
                 </div>
-                <div class="form-group">
-                  <input type="tel" id="phone" name="phone" class="form-control short-input" placeholder="טלפון" required [(ngModel)]="model.phone" #phone="ngModel">
-                  <label for="phone">טלפון</label>
+
+                <div class="col-12 col-md-6">
+                  <div class="form-group">
+                    <input type="tel" id="phone" name="phone" class="form-control short-input"
+                          placeholder="טלפון" required [(ngModel)]="model.phone" #phone="ngModel">
+                    <label for="phone">טלפון</label>
+                  </div>
                 </div>
               </div>
               <div class="form-group">
@@ -40,6 +47,17 @@
                 <button type="submit" class="btn btn-primary w-100" [disabled]="!contactForm.form.valid">שלח</button>
             </div>
           </form>
+          <!-- הודעת הצלחה -->
+          <div *ngIf="successMessage" class="alert alert-success alert-dismissible fade show custom-alert" role="alert">
+            {{ successMessage }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+
+          <!-- הודעת שגיאה -->
+          <div *ngIf="errorMessage" class="alert alert-danger alert-dismissible fade show custom-alert" role="alert">
+            {{ errorMessage }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
           <div *ngIf="submitted && !contactForm.form.valid" class="alert alert-danger mt-3">
             <ul class="mb-0">
               <li *ngIf="name.errors?.['required']">שם מלא שדה חובה</li>

@@ -4,6 +4,23 @@
     background-color: #fef2e5;
 }
 
+h2.accordion-header {
+    padding: 1rem;
+    margin-bottom: 0;
+}
+
+.accordion-body {
+  padding: 1rem;
+}
+  
+.section-divider {
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(to right, #e8d5c4, #ccae88);
+    margin: 0.5rem 2rem 0 0;
+    border-radius: 3px;
+  }
+
 .content-section {
   background: #fff;
   border-radius: 18px;
@@ -17,35 +34,40 @@
   margin: auto;
 }
 
-.accordion-body{
-    font-size: 21px;
-
+h2.content-section {
+        padding: 1rem;
+        margin-bottom: 0;
 }
 
-.section-divider {
-    width: 80px;
-    height: 3px;
-    background: linear-gradient(to right, #e8d5c4, #ccae88);
-    margin: 0.5rem 2rem 0 0;
-    border-radius: 3px;
-  }
-  
-  .accordion-header {
-    cursor: pointer;
-  }
-  
-  .accordion-body {
-    padding: 1rem;
-  }
-  
-  h2.accordion-header {
-    padding: 1rem;
-    margin-bottom: 0;
-  }
+.content-section h3 {
+  color: #374d63;
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-top: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.content-section p {
+  color: #374d63;
+  font-size: 21px;
+  margin-bottom: 1.2rem;
+  line-height: 1.8;
+}
+
+.content-section ul {
+  padding-right: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.content-section li {
+  color: #374d63;
+  font-size: 21px;
+  margin-bottom: 0.8rem;
+  line-height: 1.7;
+}
 
 @media (max-width: 991.98px) {
   .container {
-    max-width: 86vw;
     padding: 2rem;
     background-color: #fef2e5;
   }
@@ -62,10 +84,6 @@
 
   .container h2{
     font-size: 1.5rem;
-  }
-
-  .accordion-body{
-    font-size: 0.9rem;
   }
 
   .accordion-body p{

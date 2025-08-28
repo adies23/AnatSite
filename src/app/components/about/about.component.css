@@ -75,6 +75,15 @@
   border-radius: 3px;
 }
 
+.section-description {
+  color: #374d63;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  margin-bottom: 3rem;
+  direction: rtl;
+  text-align: right;
+}
+
 @media (max-width: 991px) {
   .section-about .row {
     flex-direction: column-reverse;
@@ -91,5 +100,9 @@
   }
   .about-section {
     padding: 1.5rem 0.5rem;
+  }
+  .section-description {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
   }
 }

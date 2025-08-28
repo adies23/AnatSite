@@ -4,9 +4,6 @@
       <img src="assets/images/Chair2.png" alt="Chair" class="header-logo">
       <a class="navbar-brand" routerLink="/">ענת - פסיכולוגית</a>
     </div>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
       <ul class="navbar-nav">
         <ng-container *ngFor="let link of navLinks">
@@ -31,11 +28,11 @@
     </div>
     <div class="phone-number">
       <div class="contact-icons">
-        <a href="https://wa.me/972545920661" class="contact-icon whatsapp-icon" target="_blank">
+        <a href="https://wa.me/972545920661" class="contact-icon whatsapp-icon" aria-label="שלח הודעת וואטסאפ" target="_blank">
           <i class="fab fa-whatsapp"></i>
         </a>
       </div>
-      <span class="number">0545920661</span>
+      <a href="tel:+972545920661" class="number">0545920661</a>
     </div>
   </div>
 </nav>
@@ -48,8 +45,8 @@
     </div>
     <div class="mobile-info-row">
       <span class="mobile-title">ענת - פסיכולוגית</span>
-      <span class="mobile-number">0545920661</span>
-      <a href="https://wa.me/972545920661" class="contact-icon whatsapp-icon" target="_blank">
+      <a href="tel:+972545920661" class="number">0545920661</a>
+      <a href="https://wa.me/972545920661" class="contact-icon whatsapp-icon" aria-label="שלח הודעת וואטסאפ" target="_blank">
         <i class="fab fa-whatsapp"></i>
       </a>
     </div>
